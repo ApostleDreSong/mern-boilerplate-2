@@ -4,13 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --mode development ./client/src/index.jsx --output ./client/dist/main.js --hot",
-    "build": "webpack --mode production ./client/src/index.jsx --output ./client/build/main.js"
+    "dev": "npm run dev:server && npm run dev:client",
+    "dev:client": "webpack-dev-server --mode development client/src/index.jsx --output client/build/main.js --hot",
+    "dev:server": "nodemon server/index.js --exec \"babel-node server --presets es2015\"",
+    "build": "npm run build:server && npm run build:client",
+    "build:client": "webpack --mode production client/src/index.jsx --output client/dist/main.js",
+    "build:server": "babel server -d server/dist --presets es2015",
+    "start": "npm run build:server && node server/dist/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
@@ -23,6 +29,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.17.3",
     "style-loader": "^0.21.0",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.14",
@@ -30,6 +37,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "express": "^4.16.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
