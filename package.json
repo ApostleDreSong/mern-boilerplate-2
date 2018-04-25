@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run dev:server & npm run dev:client",
-    "dev:client": "webpack-dev-server --mode development client/src/index.jsx --output client/build/main.js --hot",
-    "dev:server": "nodemon server/app.js --exec \"babel-node server/app.js --presets es2015\"",
-    "build": "npm run build:server & npm run build:client",
-    "build:client": "webpack --mode production client/src/index.jsx --output client/dist/main.js",
-    "build:server": "babel server -d server/dist --presets es2015 --ignore dist",
-    "start:server": "npm run build:server && node server/dist/app.js"
+    "dev:client": "webpack-dev-server --mode development client/src/index.jsx --hot",
+    "dev:server": "nodemon server/app.js",
+    "build": "npm run build:client && npm run start:server",
+    "build:client": "npm run clean:client && webpack --mode production client/src/index.jsx --output client/dist/main.js",
+    "clean:client": "rm -rf ./client/dist",
+    "start:server": "node server/app.js"
   },
   "keywords": [],
   "author": "",
