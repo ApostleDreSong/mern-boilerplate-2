@@ -1,3 +1,4 @@
+const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -13,6 +14,11 @@ const extractSass = new ExtractTextPlugin({
 });
 
 module.exports = {
+  entry: './client/app.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, './client/dist'),
+  },
   module: {
     rules: [
       {

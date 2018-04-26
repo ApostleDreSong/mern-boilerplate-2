@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run dev:server & npm run dev:client",
-    "dev:client": "webpack-dev-server --mode development client/app.js --hot",
+    "dev:client": "webpack-dev-server --mode development --hot",
     "dev:server": "nodemon server/app.js --ignore 'client/*'",
     "build": "npm run build:client && npm run start:server",
-    "build:client": "npm run clean:client && webpack --mode production client/app.js --output client/dist/main.js",
+    "build:client": "npm run clean:client && webpack --mode production",
     "clean:client": "rm -rf ./client/dist",
     "start:server": "node server/app.js"
   },
