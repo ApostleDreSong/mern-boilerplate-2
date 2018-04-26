@@ -1,8 +1,15 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: './client/src/index.html',
+  template: './client/index.html',
   // filename: './index.html',
+});
+
+
+const extractSass = new ExtractTextPlugin({
+  filename: '[name].css',
+  disable: process.env.NODE_ENV === 'development',
 });
 
 module.exports = {
@@ -16,10 +23,14 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: extractSass.extract({
+          use: ['css-loader', 'sass-loader'],
+          fallback: 'style-loader',
+        }),
       },
     ],
   },
-  plugins: [htmlPlugin],
+  plugins: [htmlPlugin, extractSass],
 };
