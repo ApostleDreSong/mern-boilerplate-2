@@ -1,0 +1,105 @@
+@import 'mixins';
+
+$media-break-lg: 1054px;
+$media-break-sm: 715px;
+
+.container {
+    max-width: 1308px;
+    margin: 0 auto;
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+
+    @media screen and (max-width: $media-break-lg) {
+        max-width: 864px;
+    }
+
+    @media screen and (max-width: $media-break-sm) {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+.col,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+    @include flex(0 0 auto);
+    box-sizing: border-box;
+    // padding: 0px 0.75rem 0px 0.75rem;
+    padding: 0.75rem;
+}
+
+.col {
+    @include flex(1 0%);
+    max-width: 100%;
+}
+
+.col-1 {
+    @include flex-basis(#{percentage(1/12)});
+    max-width: percentage(1/12);
+}
+
+.col-2 {
+    @include flex-basis(#{percentage(2/12)});
+    max-width: percentage(2/12);
+}
+
+.col-3 {
+    @include flex-basis(#{percentage(3/12)});
+    max-width: percentage(3/12);
+}
+
+.col-4 {
+    @include flex-basis(#{percentage(4/12)});
+    max-width: percentage(4/12);
+}
+
+.col-5 {
+    @include flex-basis(#{percentage(5/12)});
+    max-width: percentage(5/12);
+}
+
+.col-6 {
+    @include flex-basis(#{percentage(6/12)});
+    max-width: percentage(6/12);
+}
+
+.col-7 {
+    @include flex-basis(#{percentage(7/12)});
+    max-width: percentage(7/12);
+}
+
+.col-8 {
+    @include flex-basis(#{percentage(8/12)});
+    max-width: percentage(8/12);
+}
+
+.col-9 {
+    @include flex-basis(#{percentage(9/12)});
+    max-width: percentage(9/12);
+}
+
+.col-10 {
+    @include flex-basis(#{percentage(10/12)});
+    max-width: percentage(10/12);
+}
+
+.col-11 {
+    @include flex-basis(#{percentage(11/12)});
+    max-width: percentage(11/12);
+}
+
+.col-12 {
+    @include flex-basis(100%);
+    max-width: 100%;
+}
