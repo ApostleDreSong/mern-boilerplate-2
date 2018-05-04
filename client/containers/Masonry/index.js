@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 
@@ -7,7 +6,7 @@ const breakPoints = {
   sm: 320,
   md: 820,
   lg: 1310,
-}
+};
 
 const MasonryContainer = styled.div`
   display: flex;
@@ -70,8 +69,10 @@ class Masonry extends React.Component {
   }
 
   updateWindowWidth() {
-    // Given the window size determines what layout type to render. Will set 
-    // the state.layoutType if new breakpoint is encountered.
+    /*
+    Given the window size determines what layout type to render. Will set
+    the state.layoutType if new breakpoint is encountered.
+    */
     const windowWidth = window.innerWidth;
     if (windowWidth >= breakPoints.lg) {
       if (this.state.layoutType !== 'large') {
@@ -93,8 +94,10 @@ class Masonry extends React.Component {
   }
 
   render() {
-    // Depending on the layoutType renders the correct layout. Also checks 
-    // layout for edge cases such as childern.length === 2 || 3.
+    /*
+    Depending on the layoutType renders the correct layout. Also checks
+    layout for edge cases such as childern.length === 2 || 3.
+    */
     let layout = null;
     switch (this.state.layoutType) {
       case 'large': {
@@ -171,6 +174,5 @@ class Masonry extends React.Component {
     return layout;
   }
 }
-
 
 export default Masonry;

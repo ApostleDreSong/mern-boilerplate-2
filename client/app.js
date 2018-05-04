@@ -22,7 +22,7 @@ const Card = styled.div.attrs({
 const range = Array.from({ length: 100 }, (x, i) => i);
 
 const elements = range.map((val, idx) => {
-  const height = Math.round(Math.random() * (420 - 380) + 380);
+  const height = Math.round((Math.random() * (420 - 380)) + 380);
   const key = `card-${idx}`;
   return (
     <Card style={{ height }} key={key}>

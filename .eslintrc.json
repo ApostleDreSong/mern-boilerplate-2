@@ -2,7 +2,7 @@
     "extends": "airbnb",
     "env": {
         "browser": true,
-        "node": true,
+        "node": true
     },
     "globals": {
         "document": true
