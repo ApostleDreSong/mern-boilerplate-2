@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import './styles/main.scss';
+import Navbar from './components/Navbar';
 import Masonry from './containers/Masonry';
 
 const Card = styled.div.attrs({
@@ -32,9 +33,14 @@ const elements = range.map((val, idx) => {
 });
 
 const Index = () => (
-  <Masonry>
-    {elements}
-  </Masonry>
+  <div>
+    <Navbar />
+    <section Style="margin-top: 120px;">
+      <Masonry>
+        {elements}
+      </Masonry>
+    </section>
+  </div>
 );
 
 ReactDOM.render(<Index />, document.getElementById('index'));

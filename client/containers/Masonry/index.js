@@ -24,7 +24,6 @@ const MasonryContainer = styled.div`
   }
 `;
 
-
 const MasonryColumn = styled.div`
   flex: 1;
 `;
