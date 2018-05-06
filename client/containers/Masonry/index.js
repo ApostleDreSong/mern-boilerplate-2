@@ -4,23 +4,23 @@ import styled from 'styled-components';
 
 const breakPoints = {
   sm: 320,
-  md: 820,
-  lg: 1310,
+  md: 800,
+  lg: 1200,
 };
 
 const MasonryContainer = styled.div`
   display: flex;
   margin: 0 auto;
   @media screen and (min-width: ${breakPoints.sm}px) {
-    width: 100%;
+    max-width: 100%;
   }
 
   @media screen and (min-width: ${breakPoints.md}px) {
-    width: 800px;
+    max-width: 800px;
   }
 
   @media screen and (min-width: ${breakPoints.lg}px) {
-    width: 1300px;
+    max-width: 1100px;
   }
 `;
 

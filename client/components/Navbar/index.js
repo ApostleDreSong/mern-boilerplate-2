@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const breakPoints = {
   sm: 320,
-  md: 820,
-  lg: 1310,
+  md: 800,
+  lg: 1200,
 };
 
 const Header = styled.header`
@@ -28,11 +28,11 @@ const Container = styled.div`
   }
 
   @media screen and (min-width: ${breakPoints.md}px) {
-    width: 788px;
+    max-width: 788px;
   }
 
   @media screen and (min-width: ${breakPoints.lg}px) {
-    width: 1288px;
+    max-width: 1088px;
   }
 `;
 
