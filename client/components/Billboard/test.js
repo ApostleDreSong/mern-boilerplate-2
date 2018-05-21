@@ -14,7 +14,6 @@ const dummyProps = {
   color: 'green',
 };
 
-
 describe('<Billboard />', () => {
   it('renders the styled component <Container />', () => {
     const wrapper = shallow(<Billboard
@@ -58,7 +57,10 @@ describe('<Billboard />', () => {
       buttonText={dummyProps.buttonText}
       buttonLink={dummyProps.buttonLink}
     />);
-    expect(wrapper.find('Container').childAt(0).name()).to.equal('Headline');
+    expect(wrapper
+      .find('Container')
+      .childAt(0)
+      .name()).to.equal('Headline');
   });
 
   it('<Headline /> displays the headline prop', () => {
@@ -68,7 +70,10 @@ describe('<Billboard />', () => {
       buttonText={dummyProps.buttonText}
       buttonLink={dummyProps.buttonLink}
     />);
-    expect(wrapper.find('Headline').dive().text()).to.contain(dummyProps.headline);
+    expect(wrapper
+      .find('Headline')
+      .dive()
+      .text()).to.contain(dummyProps.headline);
   });
 
   it('<Container /> second child is <Body />', () => {
@@ -78,7 +83,10 @@ describe('<Billboard />', () => {
       buttonText={dummyProps.buttonText}
       buttonLink={dummyProps.buttonLink}
     />);
-    expect(wrapper.find('Container').childAt(1).name()).to.equal('Body');
+    expect(wrapper
+      .find('Container')
+      .childAt(1)
+      .name()).to.equal('Body');
   });
 
   it('<Body /> displays the description prop', () => {
@@ -88,7 +96,10 @@ describe('<Billboard />', () => {
       buttonText={dummyProps.buttonText}
       buttonLink={dummyProps.buttonLink}
     />);
-    expect(wrapper.find('Body').dive().text()).to.contain(dummyProps.description);
+    expect(wrapper
+      .find('Body')
+      .dive()
+      .text()).to.contain(dummyProps.description);
   });
 
   it('<Container /> third child is <Button />', () => {
@@ -98,7 +109,10 @@ describe('<Billboard />', () => {
       buttonText={dummyProps.buttonText}
       buttonLink={dummyProps.buttonLink}
     />);
-    expect(wrapper.find('Container').childAt(2).name()).to.equal('Button');
+    expect(wrapper
+      .find('Container')
+      .childAt(2)
+      .name()).to.equal('Button');
   });
 
   it('<Button /> displays the buttonText prop', () => {
@@ -108,6 +122,9 @@ describe('<Billboard />', () => {
       buttonText={dummyProps.buttonText}
       buttonLink={dummyProps.buttonLink}
     />);
-    expect(wrapper.find('Button').dive().text()).to.contain(dummyProps.buttonText);
+    expect(wrapper
+      .find('Button')
+      .dive()
+      .text()).to.contain(dummyProps.buttonText);
   });
 });

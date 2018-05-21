@@ -15,6 +15,7 @@ const Header = styled.header`
   width: 100%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 `;
+Header.displayName = 'Header';
 
 const Container = styled.div`
   display: flex;
@@ -34,16 +35,19 @@ const Container = styled.div`
     max-width: 1088px;
   }
 `;
+Container.displayName = 'Container';
 
 const Logo = styled.a`
   align-self: flex-start;
   height: 50px;
 `;
+Logo.displayName = 'Logo';
 
 const TabBlock = styled.div`
   height: 50px;
   border-top: 1px solid #dedede;
 `;
+TabBlock.displayName = 'TabBlock';
 
 const TabLinks = styled.ul`
   list-style: none;
@@ -57,6 +61,7 @@ const TabLinks = styled.ul`
     vertical-align: middle;
   }
 `;
+TabLinks.displayName = 'TabLinks';
 
 const Tab = styled.div`
   padding: 0 16px;
@@ -67,6 +72,7 @@ const Tab = styled.div`
   border-bottom: ${props => (props.active ? '3px solid #424242' : '3px solid transparent')};
   min-width: inherit;
 `;
+Tab.displayName = 'Tab';
 
 function Navbar() {
   return (

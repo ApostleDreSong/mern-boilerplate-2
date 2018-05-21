@@ -22,6 +22,7 @@ const Container = styled.div`
     border-radius: 3px;
   }
 `;
+Container.displayName = 'Container';
 
 const Frame = styled.div`
   display: flex;
@@ -30,23 +31,28 @@ const Frame = styled.div`
   min-height: 250px;
   padding: 20px 20px 16px 20px;
 `;
+Frame.displayName = 'Frame';
+
 
 const Headline = styled.h2`
   font-family: 'Arvo', serif;
   font-size: 33px;
   margin: 0 0 23px;
 `;
+Headline.displayName = 'Headline';
 
 const Body = styled.p`
   font-family: 'Lato', sans-serif;
   font-size: 16px;
   margin: 0px;
 `;
+Body.displayName = 'Body';
 
 const ButtonPanel = styled.div`
   display: flex;
   padding: 16px 20px;
 `;
+ButtonPanel.displayName = 'ButtonPanel';
 
 const Button = styled.a`
   padding: 7px 30px;
@@ -68,7 +74,7 @@ const Button = styled.a`
     outline: none;
   }
 `;
-
+Button.displayName = 'Button';
 
 /*
 const ImageHeader = styled.div`
@@ -84,6 +90,7 @@ const Image = styled.img`
   width: 100%;
   height: auto;
 `;
+Image.displayName = 'Image';
 
 function Card(props) {
   return (
