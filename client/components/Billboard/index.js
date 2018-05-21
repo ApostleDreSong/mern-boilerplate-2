@@ -2,6 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+const breakPoints = {
+  sm: 320,
+  md: 800,
+  lg: 1200,
+};
+
 const Container = styled.div`
   background: linear-gradient(
     30deg,
@@ -15,10 +21,13 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 3px;
   box-shadow: 1px 2px 5px 0 rgba(52, 40, 22, 0.04), 0 1px 2px 0 rgba(53, 40, 22, 0.04);
-  margin: 12px 6px;
   padding: 20px;
+  margin-bottom: 12px;
+  @media screen and (min-width: ${breakPoints.md}px) {
+    margin: 12px 6px;
+    border-radius: 3px;
+  }
 `;
 
 Container.displayName = 'Container';

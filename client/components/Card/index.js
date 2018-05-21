@@ -2,6 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+const breakPoints = {
+  sm: 320,
+  md: 800,
+  lg: 1200,
+};
+
 const Container = styled.div`
   background-color: #fff;
   min-height: 250px;
@@ -9,9 +15,12 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  border-radius: 3px;
   box-shadow: 1px 2px 5px 0 rgba(52, 40, 22, 0.04), 0 1px 2px 0 rgba(53, 40, 22, 0.04);
-  margin: 12px 6px;
+  margin-bottom: 12px;
+  @media screen and (min-width: ${breakPoints.md}px) {
+    margin: 12px 6px;
+    border-radius: 3px;
+  }
 `;
 
 const Frame = styled.div`
