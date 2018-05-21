@@ -13,13 +13,12 @@ const Header = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
-  box-shadow: 0 1px 3px rgba(0,0,0,.1);
-  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 `;
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
   margin: 0 auto;
   height: ${props => props.height || '100%'};
@@ -36,7 +35,6 @@ const Container = styled.div`
   }
 `;
 
-
 const Logo = styled.a`
   align-self: flex-start;
   height: 50px;
@@ -44,7 +42,7 @@ const Logo = styled.a`
 
 const TabBlock = styled.div`
   height: 50px;
-  border-top: 1px solid #DEDEDE;
+  border-top: 1px solid #dedede;
 `;
 
 const TabLinks = styled.ul`
@@ -64,9 +62,9 @@ const Tab = styled.div`
   padding: 0 16px;
   line-height: 46px;
   text-transform: uppercase;
-  color: ${props => (props.active ? '#7C65F8' : 'inherit')};
+  color: ${props => (props.active ? '#424242' : 'inherit')};
   font-weight: ${props => (props.active ? 500 : 400)};
-  border-bottom: ${props => (props.active ? '3px solid #7C65F8' : '3px solid transparent')};
+  border-bottom: ${props => (props.active ? '3px solid #424242' : '3px solid transparent')};
   min-width: inherit;
 `;
 
@@ -75,7 +73,7 @@ function Navbar() {
     <Header>
       <Container height="60px">
         <Logo href="./">
-          <img src="http://via.placeholder.com/100x50" alt="logo" width="100" />
+          <img src="http://acmelogos.com/images/logo-7.svg" alt="logo" width="100" height="100%" />
         </Logo>
       </Container>
       <TabBlock>

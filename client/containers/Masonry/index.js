@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 const breakPoints = {
   sm: 320,
   md: 800,
@@ -24,16 +23,19 @@ const MasonryContainer = styled.div`
   }
 `;
 
+MasonryContainer.displayName = 'MasonryContainer';
+
 const MasonryColumn = styled.div`
   flex: 1;
 `;
+
+MasonryColumn.displayName = 'MasonryColumn';
 
 class Masonry extends React.Component {
   constructor(props) {
     super(props);
 
     this.updateWindowWidth = this.updateWindowWidth.bind(this);
-
 
     // handle columns for each layout breakpoint
     const { children } = this.props;
@@ -103,60 +105,42 @@ class Masonry extends React.Component {
         if (this.props.children.length === 2) {
           layout = (
             <MasonryContainer>
-              <MasonryColumn>
-                {this.twoCol[0]}
-              </MasonryColumn>
-              <MasonryColumn>
-                {this.twoCol[1]}
-              </MasonryColumn>
+              <MasonryColumn>{this.twoCol[0]}</MasonryColumn>
+              <MasonryColumn>{this.twoCol[1]}</MasonryColumn>
             </MasonryContainer>
           );
           break;
         }
-        if (this.props.children.length === 1) {
+        if (!Array.isArray(this.props.children) || this.props.children.length === 1) {
           layout = (
             <MasonryContainer>
-              <MasonryColumn>
-                {this.props.children}
-              </MasonryColumn>
+              <MasonryColumn>{this.props.children}</MasonryColumn>
             </MasonryContainer>
           );
           break;
         }
         layout = (
           <MasonryContainer>
-            <MasonryColumn>
-              {this.threeCol[0]}
-            </MasonryColumn>
-            <MasonryColumn>
-              {this.threeCol[1]}
-            </MasonryColumn>
-            <MasonryColumn>
-              {this.threeCol[2]}
-            </MasonryColumn>
+            <MasonryColumn>{this.threeCol[0]}</MasonryColumn>
+            <MasonryColumn>{this.threeCol[1]}</MasonryColumn>
+            <MasonryColumn>{this.threeCol[2]}</MasonryColumn>
           </MasonryContainer>
         );
         break;
       }
       case 'medium': {
-        if (this.props.children.length === 1) {
+        if (!Array.isArray(this.props.children) || this.props.children.length === 1) {
           layout = (
             <MasonryContainer>
-              <MasonryColumn>
-                {this.props.children}
-              </MasonryColumn>
+              <MasonryColumn>{this.props.children}</MasonryColumn>
             </MasonryContainer>
           );
           break;
         }
         layout = (
           <MasonryContainer>
-            <MasonryColumn>
-              {this.twoCol[0]}
-            </MasonryColumn>
-            <MasonryColumn>
-              {this.twoCol[1]}
-            </MasonryColumn>
+            <MasonryColumn>{this.twoCol[0]}</MasonryColumn>
+            <MasonryColumn>{this.twoCol[1]}</MasonryColumn>
           </MasonryContainer>
         );
         break;
@@ -164,9 +148,7 @@ class Masonry extends React.Component {
       default:
         layout = (
           <MasonryContainer>
-            <MasonryColumn>
-              {this.props.children}
-            </MasonryColumn>
+            <MasonryColumn>{this.props.children}</MasonryColumn>
           </MasonryContainer>
         );
     }
