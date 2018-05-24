@@ -27,6 +27,29 @@ MasonryContainer.displayName = 'MasonryContainer';
 
 const MasonryColumn = styled.div`
   flex: 1;
+  margin: 0px;
+
+  @media screen and (min-width: ${breakPoints.md}px) {
+    &:first-child {
+      margin-right: 6px;
+    }
+    &:last-child {
+      margin-left: 6px;
+    }
+  }
+
+  @media screen and (min-width: ${breakPoints.lg}px) {
+    &:first-child {
+      margin-right: 0px;
+    }
+    &:last-child {
+      margin-left: 0px;
+    }
+    &:nth-child(2) {
+      margin: 0 12px;
+    }
+  }
+}
 `;
 
 MasonryColumn.displayName = 'MasonryColumn';

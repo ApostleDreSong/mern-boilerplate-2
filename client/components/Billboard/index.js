@@ -25,7 +25,7 @@ const Container = styled.div`
   padding: 20px;
   margin-bottom: 12px;
   @media screen and (min-width: ${breakPoints.md}px) {
-    margin: 12px 6px;
+    /*margin: 12px 6px;*/
     border-radius: 3px;
   }
 `;

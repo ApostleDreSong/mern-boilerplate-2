@@ -18,7 +18,7 @@ const Container = styled.div`
   box-shadow: 1px 2px 5px 0 rgba(52, 40, 22, 0.04), 0 1px 2px 0 rgba(53, 40, 22, 0.04);
   margin-bottom: 12px;
   @media screen and (min-width: ${breakPoints.md}px) {
-    margin: 12px 6px;
+    /*margin: 12px 6px;*/
     border-radius: 3px;
   }
 `;
