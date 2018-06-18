@@ -5,7 +5,7 @@ import './styles/main.scss';
 import Navbar from './components/Navbar';
 import Card from './components/Card';
 import Billboard from './components/Billboard';
-import Masonry from './containers/Masonry';
+import Masonry from './components/Masonry';
 
 /*
 const Card = styled.div.attrs({
